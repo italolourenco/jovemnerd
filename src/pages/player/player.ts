@@ -42,7 +42,7 @@ export class PlayerComponent {
   }
 
   playSelectedTrack() {
-    // use AudioProvider to control selected track
+    // use AudioProvider to control selected trac
     this._audioProvider.play(this.selectedTrack);
   }
 
