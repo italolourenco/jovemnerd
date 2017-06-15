@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { PlayerComponent } from '../pages/player/player';
 import { IonicAudioModule } from 'ionic-audio';
 import { AdMob } from '@ionic-native/admob';
+import { AdMobPro } from '../services/ads/ads.service'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AdMob } from '@ionic-native/admob';
     StatusBar,
     SplashScreen,
     AdMob,
+    AdMobPro,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
