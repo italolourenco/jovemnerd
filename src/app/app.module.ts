@@ -6,24 +6,31 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PlayerComponent } from '../pages/player/player';
+import { IonicAudioModule } from 'ionic-audio';
+import { AdMob } from '@ionic-native/admob';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicAudioModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PlayerComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AdMob,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

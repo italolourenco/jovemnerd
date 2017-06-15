@@ -1,0 +1,14 @@
+<ion-content padding>
+  <ion-list style="margin-top:50%">
+    <audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
+      <ion-item style="margin-top:10px">
+        <button ion-button color="dark" clear>
+          <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>
+        </button>
+        <div item-content style="width:50%">
+          <p><strong>{{audio.title}}</strong><br /><em>{{audio.artist}}</em></p>
+        </div>
+      </ion-item>
+    </audio-track>
+  </ion-list>
+</ion-content>
