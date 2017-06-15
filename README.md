@@ -21,7 +21,7 @@ $ sudo npm install
 ### Run
 
 ```bash
--> Web: ionic server
+-> Web: ionic serve
 -> Android: ionic cordova run android
 -> IOS: ionic cordova run ios
 ```
