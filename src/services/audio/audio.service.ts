@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {Audio} from "../../models/audio,model";
+import {Audio} from "../../models/audio.model";
 import {AudioFactoryService} from "./audio-factory.service";
 
 @Injectable()
@@ -12,8 +12,10 @@ export class AudioService {
   }
 
   getAudios(): Observable<Audio> {
-    return this.memeFactory.buildAudios().map(audio =>{
-      return
+    return this.audioFactory.buildAudios().map(audio =>{
+      console.log(audio);
+      this.audios.push(audio);
+      return audio;
     });
   }
 }

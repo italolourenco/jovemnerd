@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {Http} from "@angular/http";
-import {Audio} from "../../models/audio,model";
+import {Audio} from "../../models/audio.model";
 
 
 @Injectable()
