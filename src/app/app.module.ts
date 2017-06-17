@@ -13,6 +13,7 @@ import { AdMob } from '@ionic-native/admob';
 import { AdMobPro } from '../services/ads/ads.service';
 import { AudioService } from '../services/audio/audio.service';
 import {AudioFactoryService} from '../services/audio/audio-factory.service';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {AudioFactoryService} from '../services/audio/audio-factory.service';
     AdMobPro,
     AudioService,
     AudioFactoryService,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
