@@ -1,3 +1,17 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="more"> </ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>JN Talk's</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
 <ion-content padding *ngIf="myTracks.length > 0">
   <ion-list style="margin-top:50%">
     <audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
