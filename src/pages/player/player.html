@@ -21,6 +21,7 @@
         </button>
         <div item-content style="width:50%">
           <p><strong>{{audio.title}}</strong><br /><em>{{audio.artist}}</em></p>
+          <button ion-fab mini (click)="whatsappShare(track)"><ion-icon name="add"></ion-icon></button>
         </div>
       </ion-item>
     </audio-track>
