@@ -14,12 +14,15 @@ import { AdMobPro } from '../services/ads/ads.service';
 import { AudioService } from '../services/audio/audio.service';
 import {AudioFactoryService} from '../services/audio/audio-factory.service';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { PopoverController } from 'ionic-angular';
+import {ShowMore} from '../pages/more/more';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    PlayerComponent
+    PlayerComponent,
+    ShowMore
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   entryComponents: [
     MyApp,
     HomePage,
-    PlayerComponent
+    PlayerComponent,
+    ShowMore
   ],
   providers: [
     StatusBar,
@@ -41,6 +45,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     AudioService,
     AudioFactoryService,
     SocialSharing,
+    PopoverController,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
