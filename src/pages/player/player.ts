@@ -4,6 +4,8 @@ import { AdMobPro } from '../../services/ads/ads.service';
 import { Audio } from '../../models/audio.model';
 import { AudioService } from '../../services/audio/audio.service';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import {ShowMore} from '../more/more';
+import { PopoverController } from 'ionic-angular';
 
 @Component({
   selector: 'player',
@@ -15,7 +17,7 @@ export class PlayerComponent {
   allTracks: any[];
   selectedTrack: any;
 
-  constructor(private _audioProvider: AudioProvider, private adsService: AdMobPro, private audioService: AudioService, private sharingVar: SocialSharing) {
+  constructor(private _audioProvider: AudioProvider, private adsService: AdMobPro, private audioService: AudioService, private sharingVar: SocialSharing, public popoverCtrl: PopoverController) {
     this.myTracks = [];
     console.log(this.sharingVar);
     this.startApp();
@@ -45,6 +47,11 @@ export class PlayerComponent {
     console.log('Track finished', track)
   }
 
+  showmore():void {
+      let popover = this.popoverCtrl.create(ShowMore);
+      popover.present();
+}
+
   whatsappShare(track : Audio): void{
     console.log("ola");
     console.log(this.sharingVar);
@@ -56,4 +63,5 @@ export class PlayerComponent {
             alert("failed")
           })
         }
+
 }
