@@ -99,6 +99,36 @@
       "src": "https://www.myinstants.com/media/sounds/abertura-nerd-office.mp3",
       "artist": "Vinhetas",
       "title": "Abertura Nerdoffice"
-     }
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/untitled_1137.mp3",
+      "artist": "Jovem Nerd",
+      "title": "O Poder da Matematica!"
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/raios.mp3",
+      "artist": "Jovem Nerd",
+      "title": "Cruza os raios cara!"
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/predador-dourado.mp3",
+      "artist": "Jovem Nerd",
+      "title": "Predador Dourado"
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/beto-barreira.mp3",
+      "artist": "Jovem Nerd",
+      "title": "Beto Barreira"
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/vazando-da-favela-nerdplayer-126-mp3cut.mp3",
+      "artist": "Azaghal",
+      "title": "Gritinho"
+    },
+    {
+      "src": "https://www.myinstants.com/media/sounds/max-payne-3-vazando-da-favela-nerdplayer-126-mp3cut.mp3",
+      "artist": "Azaghal",
+      "title": "Why don't you die!"
+    }
   ]
 }
