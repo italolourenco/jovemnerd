@@ -6,6 +6,7 @@ import { AudioService } from '../../services/audio/audio.service';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import {ShowMore} from '../more/more';
 import { PopoverController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'player',
@@ -17,10 +18,18 @@ export class PlayerComponent {
   allTracks: any[];
   selectedTrack: any;
 
-  constructor(private _audioProvider: AudioProvider, private adsService: AdMobPro, private audioService: AudioService, private sharingVar: SocialSharing, public popoverCtrl: PopoverController) {
+  constructor(private _audioProvider: AudioProvider, private adsService: AdMobPro, private audioService: AudioService, private sharingVar: SocialSharing, public popoverCtrl: PopoverController, public loadingCtrl: LoadingController) {
     this.myTracks = [];
-    console.log(this.sharingVar);
+    this.presentLoading();
     this.startApp();
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Carregando ...",
+      duration: 3000
+    });
+    loader.present();
   }
 
 
@@ -31,7 +40,6 @@ export class PlayerComponent {
   }
 
   ngAfterContentInit() {
-    console.log(this.myTracks);
     this.allTracks = this._audioProvider.tracks;
   }
 
@@ -44,7 +52,6 @@ export class PlayerComponent {
   }
 
   onTrackFinished(track: any) {
-    console.log('Track finished', track)
   }
 
   showmore():void {
@@ -53,15 +60,9 @@ export class PlayerComponent {
 }
 
   whatsappShare(track : Audio): void{
-    console.log("ola");
-    console.log(this.sharingVar);
     this.sharingVar.shareViaWhatsApp("Jovem Nerd Talks", track.getSrc(),  null /* url */)
-        .then(()=>{
-            alert("Success");
-          },
-          ()=>{
-            alert("failed")
-          })
+        .then(()=>{},
+          ()=>{})
         }
 
 }
