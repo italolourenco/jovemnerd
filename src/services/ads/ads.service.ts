@@ -22,13 +22,6 @@ constructor(platform: Platform, private admob: AdMob){
       };
     }
 
-    if(platform.is('ios')) {
-      this._admobid = {
-        banner: 'ca-app-pub-8828235459141357/5474062821',
-        interstitial: 'ca-app-pub-8828235459141357/5474062821'
-      };
-    }
-
     this.init();
   })
 }

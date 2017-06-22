@@ -13,7 +13,6 @@ export class AudioService {
 
   getAudios(): Observable<Audio> {
     return this.audioFactory.buildAudios().map(audio =>{
-      console.log(audio);
       this.audios.push(audio);
       return audio;
     });
