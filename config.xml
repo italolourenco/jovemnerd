@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="simplecodelabs.jnfalas" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="simplecodelabs.jnfalas" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>JN Falas</name>
     <description>Um app desenvolvido pela SimpleCodeLabs</description>
-    <author email="simplecodelabs@gmail.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="simplecodelabs@gmail.com" href="http://ionicframework.com/">SimplecodeLabs Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
