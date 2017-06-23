@@ -1,12 +1,31 @@
-<ion-content padding>
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="showmore()">
+        <ion-icon name="more"> </ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>JN Talk's</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding *ngIf="myTracks.length > 0">
   <ion-list style="margin-top:50%">
     <audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
-      <ion-item style="margin-top:10px">
-        <button ion-button color="dark" clear>
-          <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>
-        </button>
-        <div item-content style="width:50%">
-          <p><strong>{{audio.title}}</strong><br /><em>{{audio.artist}}</em></p>
+      <ion-item class="item" style="background-color:none">
+        <div class="row">
+          <button ion-button color="dark" clear>
+            <audio-track-play dark [audioTrack]="audio"><ion-spinner></ion-spinner></audio-track-play>
+          </button>
+          <div item-content class="text">
+            <p class="white"><strong>{{audio.title}}</strong><br /><em>{{audio.artist}}</em></p>
+          </div>
+          <div style="margin-left:auto">
+            <button ion-fab mini (click)="whatsappShare(track)" class="butaoBolado"><ion-icon name="share"></ion-icon></button>
+          </div>
         </div>
       </ion-item>
     </audio-track>

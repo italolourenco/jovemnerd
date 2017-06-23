@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AudioProvider } from 'ionic-audio';
+<<<<<<< HEAD
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -9,6 +10,15 @@ interface AdMobType {
   banner: string,
   interstitial: string
 };
+=======
+import { AdMobPro } from '../../services/ads/ads.service';
+import { Audio } from '../../models/audio.model';
+import { AudioService } from '../../services/audio/audio.service';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import {ShowMore} from '../more/more';
+import { PopoverController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
+>>>>>>> develop
 
 @Component({
   selector: 'player',
@@ -16,10 +26,11 @@ interface AdMobType {
 })
 export class PlayerComponent {
 
-  myTracks: any[];
+  myTracks: Array<Audio>;
   allTracks: any[];
   selectedTrack: any;
 
+<<<<<<< HEAD
   constructor(private _audioProvider: AudioProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private admob: AdMob) {
     // plugin won't preload data by default, unless preload property is defined within json object - defaults to 'none'
     platform.ready().then(() => {
@@ -76,24 +87,53 @@ export class PlayerComponent {
       title: 'VEM CA LOLITA',
     }
     ];
+=======
+  constructor(private _audioProvider: AudioProvider, private adsService: AdMobPro, private audioService: AudioService, private sharingVar: SocialSharing, public popoverCtrl: PopoverController, public loadingCtrl: LoadingController) {
+    this.myTracks = [];
+    this.presentLoading();
+    this.startApp();
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Carregando ...",
+      duration: 3000
+    });
+    loader.present();
+  }
+
+
+  startApp():void {
+    this.audioService.getAudios().subscribe(audio => {
+      this.myTracks.push(audio);
+    })
+>>>>>>> develop
   }
 
   ngAfterContentInit() {
-    // get all tracks managed by AudioProvider so we can control playback via the API
     this.allTracks = this._audioProvider.tracks;
   }
 
   playSelectedTrack() {
-    // use AudioProvider to control selected track
     this._audioProvider.play(this.selectedTrack);
   }
 
   pauseSelectedTrack() {
-     // use AudioProvider to control selected track
      this._audioProvider.pause(this.selectedTrack);
   }
 
   onTrackFinished(track: any) {
-    console.log('Track finished', track)
   }
+
+  showmore():void {
+      let popover = this.popoverCtrl.create(ShowMore);
+      popover.present();
+}
+
+  whatsappShare(track : Audio): void{
+    this.sharingVar.shareViaWhatsApp("Jovem Nerd Talks", track.getSrc(),  null /* url */)
+        .then(()=>{},
+          ()=>{})
+        }
+
 }
