@@ -10,15 +10,12 @@ import { HomePage } from '../pages/home/home';
 import { PlayerComponent } from '../pages/player/player';
 import { IonicAudioModule } from 'ionic-audio';
 import { AdMob } from '@ionic-native/admob';
-<<<<<<< HEAD
-=======
 import { AdMobPro } from '../services/ads/ads.service';
 import { AudioService } from '../services/audio/audio.service';
 import {AudioFactoryService} from '../services/audio/audio-factory.service';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { PopoverController } from 'ionic-angular';
 import {ShowMore} from '../pages/more/more';
->>>>>>> develop
 
 @NgModule({
   declarations: [
@@ -44,14 +41,11 @@ import {ShowMore} from '../pages/more/more';
     StatusBar,
     SplashScreen,
     AdMob,
-<<<<<<< HEAD
-=======
     AdMobPro,
     AudioService,
     AudioFactoryService,
     SocialSharing,
     PopoverController,
->>>>>>> develop
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
